@@ -1,0 +1,30 @@
+[project]
+name = "agentic-memory"
+version = "0.1.0"
+description = "Local, validated, long-term memory for coding agents over MCP"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=2.3.0",
+    "pydantic>=2.0",
+]
+
+[project.scripts]
+agent-memory = "src.cli:main"
+agent-memory-mcp = "src.mcp_server:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

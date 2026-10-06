@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "agent-memory": {
+      "command": "${workspaceFolder}/scripts/agent-memory-mcp",
+      "env": {
+        "AGENT_MEMORY_PROJECT_ID": "prj_REPLACE_WITH_ID_FROM_agent-memory_init"
+      }
+    }
+  }
+}

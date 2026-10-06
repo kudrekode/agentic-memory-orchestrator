@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Start the local agent memory MCP server. Defaults to this checkout's dev database.
+set -euo pipefail
+root="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$root"
+export AGENT_MEMORY_DB="${AGENT_MEMORY_DB:-$root/data/dev/memory.db}"
+export PYTHONPATH="$root${PYTHONPATH:+:$PYTHONPATH}"
+exec python3 -m src.mcp_server
